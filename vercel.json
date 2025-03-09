@@ -2,13 +2,20 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "framework": "vite",
-  "routes": [
-    { "src": "/login", "dest": "/" },
-    { "src": "/auth/callback", "dest": "/" },
-    { "src": "/dashboard", "dest": "/" },
-    { "src": "/(.*)", "dest": "/" }
-  ],
+  "outputDirectory": "dist",
+  "public": true,
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
   ]
 }
