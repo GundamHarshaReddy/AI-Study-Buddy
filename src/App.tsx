@@ -35,8 +35,19 @@ function App() {
     <Router>
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
-          <Route path="/login" element={!user ? <AuthForm /> : <Navigate to="/dashboard" />} />
-          <Route path="/auth/callback" element={<AuthCallback />} />
+          {/* Handle both /login and / for authentication */}
+          <Route 
+            path="/login" 
+            element={!user ? <AuthForm /> : <Navigate to="/dashboard" />} 
+          />
+          <Route 
+            path="/" 
+            element={!user ? <AuthForm /> : <Navigate to="/dashboard" />} 
+          />
+          <Route 
+            path="/auth/callback" 
+            element={<AuthCallback />} 
+          />
           <Route
             path="/dashboard"
             element={
@@ -52,7 +63,11 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/" element={<Navigate to={user ? "/dashboard" : "/login"} />} />
+          {/* Add a catch-all route that redirects to appropriate page */}
+          <Route 
+            path="*" 
+            element={<Navigate to={user ? "/dashboard" : "/login"} />} 
+          />
         </Routes>
       </Suspense>
     </Router>

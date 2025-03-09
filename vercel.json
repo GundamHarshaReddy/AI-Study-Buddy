@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "src": "/login", "dest": "/" },
+    { "src": "/auth/callback", "dest": "/" },
+    { "src": "/dashboard", "dest": "/" },
+    { "src": "/(.*)", "dest": "/" }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
