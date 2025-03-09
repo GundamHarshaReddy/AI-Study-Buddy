@@ -796,7 +796,7 @@ function ChatInterfaceContent({
               <div className={`w-full p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'} mb-4`}>
                 <h4 className="font-medium mb-2">Account Information</h4>
                 <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                  Member since: {user?.metadata?.creationTime ? new Date(user.metadata.creationTime).toLocaleDateString() : 'Unknown'}
+                  Member since: {user?.created_at ? new Date(user.created_at).toLocaleDateString() : 'Loading...'}
                 </p>
               </div>
               <button
