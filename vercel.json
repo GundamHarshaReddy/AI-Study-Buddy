@@ -1,4 +1,7 @@
 {
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "vite",
   "routes": [
     { "src": "/login", "dest": "/" },
     { "src": "/auth/callback", "dest": "/" },

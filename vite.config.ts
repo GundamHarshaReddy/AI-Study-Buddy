@@ -7,6 +7,8 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     chunkSizeWarningLimit: 1000, // Increase warning limit to 1000kb
     rollupOptions: {
       output: {
@@ -18,5 +20,9 @@ export default defineConfig({
         }
       }
     }
+  },
+  server: {
+    port: 3000,
+    strictPort: true,
   }
 });
