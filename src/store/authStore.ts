@@ -80,7 +80,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 }));
 
 // Initialize auth state and handle OAuth callbacks
-supabase.auth.onAuthStateChange((event, session) => {
+supabase.auth.onAuthStateChange((_event, session) => {
   if (session?.user) {
     useAuthStore.setState({ 
       user: {

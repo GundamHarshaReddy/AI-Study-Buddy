@@ -52,13 +52,8 @@ function App() {
             path="/dashboard"
             element={
               <PrivateRoute>
-                <div className="min-h-screen bg-gray-100">
-                  <div className="max-w-3xl mx-auto px-4 py-6">
-                    <h1 className="text-2xl font-bold mb-6">Welcome to AI Study Buddy</h1>
-                    <div className="h-[calc(100vh-8rem)]">
-                      <ChatInterface />
-                    </div>
-                  </div>
+                <div className="min-h-screen w-screen overflow-hidden bg-gray-50">
+                  <ChatInterface />
                 </div>
               </PrivateRoute>
             }
